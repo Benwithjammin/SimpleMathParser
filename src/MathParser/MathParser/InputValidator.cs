@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 
 namespace MathParser
 {
@@ -24,14 +23,14 @@ namespace MathParser
 
         private static void AssertCharIsValid(char currentCharacter)
         {
-            int dummyOut = 0;
+            int dummyOut;
 
             if (Array.Exists(ValidOperators, c => c == currentCharacter) || Int32.TryParse(currentCharacter.ToString(), out dummyOut))
             {
                 return;
             }
 
-            throw new InvalidDataException(String.Format("The character {0} is not valid", currentCharacter));
+            throw new InvalidDataException(String.Format("The character '{0}' is not valid", currentCharacter));
         }
     }
 }

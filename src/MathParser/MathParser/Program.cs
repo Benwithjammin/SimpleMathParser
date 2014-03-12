@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathParser
 {
@@ -10,6 +6,23 @@ namespace MathParser
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please enter your formula. Enter 'Q' to quit");
+            string input = "";
+
+            while (!input.Equals("Q"))
+            {
+                input = Console.ReadLine();
+
+                try
+                {
+                    InputValidator.AssertInputIsValid(input);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
         }
     }
 }
