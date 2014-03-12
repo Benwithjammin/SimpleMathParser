@@ -15,6 +15,10 @@ namespace MathParser.Tests.Unit
         [TestCase("C", '*')]
         [TestCase("d", '/')]
         [TestCase("D", '/')]
+        [TestCase("e", '(')]
+        [TestCase("E", '(')]
+        [TestCase("f", ')')]
+        [TestCase("F", ')')]
         public void GivenAnOperatorCharacterThenThisShouldBecomeTheRelevantOperator(string input, char expected)
         {
             var results = OperatorMapper.Convert(input);

@@ -13,6 +13,9 @@ namespace MathParser
             {
                 input = Console.ReadLine();
 
+                var calc = new Calculator();
+                calc.CalculateResult();
+
                 try
                 {
                     InputValidator.AssertInputIsValid(input);

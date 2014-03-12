@@ -49,6 +49,7 @@
     <Compile Include="InputValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RulesTranslatorTests.cs" />
+    <Compile Include="StringTokeniserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
