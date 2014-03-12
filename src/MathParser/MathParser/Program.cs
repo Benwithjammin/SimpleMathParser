@@ -6,7 +6,7 @@ namespace MathParser
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your formula. Enter 'Q' to quit");
+            Console.WriteLine("Please enter your formula. Enter 'Q' to quit");      //Very rough REPL at the minute!
             string input = "";
 
             while (!input.Equals("Q"))
