@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculator.cs" />
     <Compile Include="OperatorMapper.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesTranslator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
