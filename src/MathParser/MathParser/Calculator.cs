@@ -1,16 +1,10 @@
-﻿using System;
-using MathParser.ShuntingYard;
-
-namespace MathParser
+﻿namespace MathParser
 {
     public class Calculator
     {
-        public int CalculateResult()
+        public int CalculateResult(string input)
         {
-            var shuntingYardMath = new ShuntingYardSimpleMath();
-            
-
-            //Double res = shuntingYardMath.Execute(ss, null);
+            string convertedInput = RulesTranslator.Translate(input);
 
             return 0;
         }

@@ -13,7 +13,8 @@ namespace MathParser.Tests.Unit
         public void SetUp()
         {
             string input = "500+10+(5/1)";
-            _tokens = StringTokeniser.ToTokens(input).ToList();
+            var tokeniser = new StringTokeniser();
+            _tokens = tokeniser.Convert(input).ToList();
         }
 
         [Test]

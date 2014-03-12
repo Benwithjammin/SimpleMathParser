@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace MathParser
 {
-    public class StringTokeniser
+    public class StringTokeniser : IStringTokeniser
     {
-        private static readonly char[] Operators = new[] { '+', '-', '*', '/', '(', ')' };
+        private readonly char[] Operators = new[] { '+', '-', '*', '/', '(', ')' };
 
-        public static IEnumerable<String> ToTokens(string input)
+        public IEnumerable<String> Convert(string input)
         {
             int start = 0;
             var tokens = new List<string>();
