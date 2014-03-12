@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace MathParser.Tests.Unit
 {
-    [TestFixture]
+    [TestFixture, Description("Rules are a = '+', b = '-', c = '*', d = '/', e = '(', f = ')' and integer values only")
     public class InputValidatorTests
     {
-       
-        {
-            
-        }
+       [Test]
+       public void GivenAValidInputStringThenNoErrorsShouldBeThrown()
+       {
+           
+       }
+
+       [Test]
+       public void GivenAnInvalidInputStringThenAnErrorShouldBeThrown()
+       {
+           
+       }
     }
 }
