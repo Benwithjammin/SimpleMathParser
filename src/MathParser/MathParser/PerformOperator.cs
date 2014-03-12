@@ -2,7 +2,7 @@
 {
     public class PerformOperator
     {
-        public static int CalculateOpetation(int valueOne, int valueTwo, string op)
+        public static int CalculateOperatation(int valueOne, int valueTwo, string op)
         {
             switch (op)
             {

@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MathParser.Tests.Unit
 {
     [TestFixture]
-    public class OperatorMapTests
+    public class RuleMapTests
     {
         [Test]
         [TestCase("a", '+')]
@@ -19,18 +19,18 @@ namespace MathParser.Tests.Unit
         [TestCase("E", '(')]
         [TestCase("f", ')')]
         [TestCase("F", ')')]
-        public void GivenAnOperatorCharacterThenThisShouldBecomeTheRelevantOperator(string input, char expected)
+        public void GivenAnRuleCharacterThenThisShouldBecomeTheRelevantMathValue(string input, char expected)
         {
-            var results = OperatorMapper.Convert(input);
+            var results = RuleMapper.Convert(input);
 
             Assert.That(results.First(), Is.EqualTo(expected));
         }
 
-        public void GivenAValidOperatorThenThisShouldBeMappable()
+        public void GivenAValidRuleCharacterThenThisShouldBeMappable()
         {
             string input = "a";
 
-            bool isOperator = OperatorMapper.IsOperator(input);
+            bool isOperator = RuleMapper.IsRule(input);
 
             Assert.That(isOperator, Is.True);
         }
@@ -38,9 +38,9 @@ namespace MathParser.Tests.Unit
         [TestCase("z")]
         [TestCase("100")]
         [TestCase("1")]
-        public void GivenAnInvalidOperatorThenThisShouldNotBeMappable(string input)
+        public void GivenAnInvalidRuleCharacterThenThisShouldNotBeMappable(string input)
         {
-            bool isOperator = OperatorMapper.IsOperator(input);
+            bool isOperator = RuleMapper.IsRule(input);
 
             Assert.That(isOperator, Is.False);
         }

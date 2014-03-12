@@ -10,7 +10,7 @@ namespace MathParser.Tests.Unit
         [SetUp]
         public void SetUp()
         {
-            _calculator = new Calculator();
+            _calculator = CalculatorFactory.Build();
         }
 
         [Test]

@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorFactory.cs" />
     <Compile Include="IStringTokeniser.cs" />
-    <Compile Include="OperatorMapper.cs" />
+    <Compile Include="RuleMapper.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="PerformOperator.cs" />
     <Compile Include="Program.cs" />
@@ -55,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathParser.ShuntingYard\MathParser.ShuntingYard.csproj">
+      <Project>{4A40A40A-1322-410C-AAB0-833B6E6E7D03}</Project>
+      <Name>MathParser.ShuntingYard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

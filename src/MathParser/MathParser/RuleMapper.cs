@@ -5,7 +5,7 @@ namespace MathParser
 {
     /*Convert the input into human readable collection of tokens based on the rules provided - a = '+', b = '-', c = '*', d = '/', e = '(', f = ')'
      * maybe an uneeded step but seems sensible!*/
-    public class OperatorMapper
+    public class RuleMapper
     {
         private static readonly Dictionary<String, String> OperatorMap = new Dictionary<String, String>()
         {
@@ -22,7 +22,7 @@ namespace MathParser
             return OperatorMap[input.ToLower()];
         }
 
-        public static bool IsOperator(string input)
+        public static bool IsRule(string input)
         {
             return OperatorMap.ContainsKey(input.ToLower());
         }

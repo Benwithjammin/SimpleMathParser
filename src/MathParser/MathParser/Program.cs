@@ -8,6 +8,7 @@ namespace MathParser
         {
             Console.WriteLine("Please enter your formula. Enter 'Q' to quit");      //Very rough REPL at the minute!
             string input = "";
+            var calculator = CalculatorFactory.Build();
 
             while (!input.Equals("Q"))
             {
@@ -16,6 +17,9 @@ namespace MathParser
                 try
                 {
                     InputValidator.AssertInputIsValid(input);
+                    int result = calculator.CalculateResult(input);
+
+                    Console.WriteLine("Success! Your result is - {0}", result);
                 }
                 catch (Exception ex)
                 {

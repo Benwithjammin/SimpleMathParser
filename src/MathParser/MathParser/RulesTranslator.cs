@@ -10,9 +10,9 @@ namespace MathParser
 
             foreach (var value in input)
             {
-                if (OperatorMapper.IsOperator(value.ToString()))
+                if (RuleMapper.IsRule(value.ToString()))
                 {
-                    string mappedOperator = OperatorMapper.Convert(value.ToString());
+                    string mappedOperator = RuleMapper.Convert(value.ToString());
                     sb.Append(mappedOperator);
                 }
                 else
