@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.IO;
+using NUnit.Framework;
 
 namespace MathParser.Tests.Unit
 {
@@ -11,24 +12,30 @@ namespace MathParser.Tests.Unit
        [TestCase("500a10b66c32")]
        [TestCase("3ae4c66fb32")]
        [TestCase("3c4d2aee2a4c41fc4f")]
-       public void GivenAValidInputStringThenNoErrorsShouldBeThrown()
+       public void GivenAValidInputStringThenNoErrorsShouldBeThrown(string input)
        {
-           
+           InputValidator.AssertInputIsValid(input);
+
+           Assert.Pass();
        }
 
        [Test]
-       public void GivenAnEmptyStringThenAnErrorShouldBeThrown()
+       [TestCase("")]
+       [TestCase("   ")]
+       [TestCase(" ")]
+       public void GivenAnEmptyStringThenAnErrorShouldBeThrown(string input)
        {
-           
+           Assert.Throws<InvalidDataException>(() => InputValidator.AssertInputIsValid(input));
        }
 
        [Test]
        [TestCase("3.1Ze9")]
        [TestCase("9xxxyZ")]
        [TestCase("Z")]
-       public void GivenAnInvalidInputStringThenAnErrorShouldBeThrown()
+       public void GivenAnInvalidInputStringThenAnErrorShouldBeThrown(string input)
        {
-           
+           Assert.Throws<InvalidDataException>(() => InputValidator.AssertInputIsValid(input));
        }
+
     }
 }

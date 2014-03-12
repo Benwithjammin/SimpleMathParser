@@ -8,7 +8,7 @@ namespace MathParser
     {
         public static List<char> Tokenise(string input)
         {
-            
+            return null;
         }
     }
 }
