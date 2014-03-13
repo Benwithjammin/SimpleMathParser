@@ -8,7 +8,7 @@ namespace MathParser.Tests.Unit
         [Test]
         public void GivenTheAdditonOperatorThenTheTwoNumbersAreAdded()
         {
-            int result = PerformOperator.CalculateOperatation(2, 5, "+");
+            int result = Operators.CalculateOperatation(2, 5, "+");
 
             Assert.That(result, Is.EqualTo(7));
         }
@@ -16,7 +16,7 @@ namespace MathParser.Tests.Unit
         [Test]
         public void GivenTheSubtractionOperatorThenTheTwoNumbersAreSubtracted()
         {
-            int result = PerformOperator.CalculateOperatation(5, 2, "-");
+            int result = Operators.CalculateOperatation(5, 2, "-");
 
             Assert.That(result, Is.EqualTo(3));
         }
@@ -24,7 +24,7 @@ namespace MathParser.Tests.Unit
         [Test]
         public void GivenTheDivisonOperatorThenTheTwoNumbersAreDivided()
         {
-            int result = PerformOperator.CalculateOperatation(4, 2, "/");
+            int result = Operators.CalculateOperatation(4, 2, "/");
 
             Assert.That(result, Is.EqualTo(2));
         }
@@ -32,7 +32,7 @@ namespace MathParser.Tests.Unit
         [Test]
         public void GivenTheMulitplicationOperatorThenTheTwoNumbersAreMulitplied()
         {
-            int result = PerformOperator.CalculateOperatation(4, 2, "*");
+            int result = Operators.CalculateOperatation(4, 2, "*");
 
             Assert.That(result, Is.EqualTo(8));
         }
