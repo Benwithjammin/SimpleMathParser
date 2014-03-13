@@ -5,16 +5,16 @@ using System.Linq;
 namespace MathParser
 {
     //3rd time lucky - focus on the Parentheses! Use Lists to help find Parentheses, we have indexOf and last index of, plus actual index values :)
-    public class ListCalculator
+    public class ListCalculator : ICalculator
     {
         private readonly StringTokeniser _stringTokeniser;
 
-        public ListCalculator()
+        public ListCalculator(IStringTokeniser tokeniser)
         {
             _stringTokeniser = new StringTokeniser();
         }
 
-        public int CaclulateResult(string input)
+        public int CalculateResult(string input)
         {
             string convertedInput = RulesTranslator.Translate(input);
             var tokens = _stringTokeniser.Convert(convertedInput).ToList();

@@ -10,7 +10,7 @@ namespace MathParser.Tests.Unit
         [SetUp]
         public void SetUp()
         {
-            _calculator = new ListCalculator();
+            _calculator = CalculatorFactory.BuildListCalculator();
         }
 
         [Test]
@@ -21,7 +21,7 @@ namespace MathParser.Tests.Unit
         [TestCase("3c4d2aee2a4c41fc4f", 990)]
         public void GivenAValueThenTheExpectedResultShouldBeReturned(string input, int expectedValue)
         {
-            int result = _calculator.CaclulateResult(input);
+            int result = _calculator.CalculateResult(input);
 
             Assert.That(result, Is.EqualTo(expectedValue));
         }

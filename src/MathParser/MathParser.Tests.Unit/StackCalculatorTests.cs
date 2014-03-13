@@ -1,12 +1,18 @@
-﻿using System;
-using System.Linq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace MathParser.Tests.Unit
 {
     [TestFixture]
     public class StackCalculatorTests
     {
+        private StackCalculator _stackCalculator;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _stackCalculator = CalculatorFactory.BuildStackCalculator();
+        }
+
         [Test]
         [TestCase("3 + 2 * 4", 20)]
         [TestCase("32 + 2 / 2", 17)]
@@ -15,10 +21,7 @@ namespace MathParser.Tests.Unit
         [TestCase("3 + ( 4 * 66 ) - 32", 70)]
         public void Test(string value, int expectedResult)
         {
-            var calc = new StackCalculator();
-            var tokens = value.Split(new[] {" "}, StringSplitOptions.None).ToList();
-
-            int result = calc.Parse(tokens);
+            int result = _stackCalculator.CalculateResult(value);
 
             Assert.That(result, Is.EqualTo(expectedResult));
         }

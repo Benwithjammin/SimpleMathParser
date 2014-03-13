@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace MathParser
 {
+    //Basically a split and keep, abstracted to interface as need to add a cleaner / quicker implementation. Also different calculators may need different tokens
     public class StringTokeniser : IStringTokeniser
     {
         private readonly char[] Operators = new[] { '+', '-', '*', '/', '(', ')' };

@@ -3,11 +3,11 @@ using MathParser.ShuntingYard;
 
 namespace MathParser
 {
-    public class Calculator
+    public class ShuntingYardCalculator : ICalculator
     {
         private readonly IStringTokeniser _tokeniser;
 
-        public Calculator(IStringTokeniser tokeniser)
+        public ShuntingYardCalculator(IStringTokeniser tokeniser)
         {
             _tokeniser = tokeniser;
         }

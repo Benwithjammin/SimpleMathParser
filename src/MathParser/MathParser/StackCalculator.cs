@@ -4,10 +4,19 @@ using System.Collections.Generic;
 namespace MathParser
 {
     //Inspired by the shunting yard algorithim, without the confusing RPN / postfix
-    public class StackCalculator
+    public class StackCalculator : ICalculator
     {
-        public int Parse(List<String> tokens)
+        private readonly IStringTokeniser _tokeniser;
+
+        public StackCalculator(IStringTokeniser tokeniser)
         {
+            _tokeniser = tokeniser;
+        }
+
+        public int CalculateResult(string input)
+        {
+            var tokens = _tokeniser.Convert(input);
+
             var stack = new Stack<String>();
             int currentPrecedence = 0;
 
