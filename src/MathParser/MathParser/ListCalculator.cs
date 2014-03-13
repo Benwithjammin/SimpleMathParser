@@ -7,11 +7,11 @@ namespace MathParser
     //3rd time lucky - focus on the Parentheses! Use Lists to help find Parentheses, we have indexOf and last index of, plus actual index values :)
     public class ListCalculator : ICalculator
     {
-        private readonly StringTokeniser _stringTokeniser;
+        private readonly IStringTokeniser _stringTokeniser;
 
         public ListCalculator(IStringTokeniser tokeniser)
         {
-            _stringTokeniser = new StringTokeniser();
+            _stringTokeniser = tokeniser;
         }
 
         public int CalculateResult(string input)
