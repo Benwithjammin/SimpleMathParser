@@ -36,5 +36,41 @@ namespace MathParser.Tests.Unit
 
             Assert.That(result, Is.EqualTo(8));
         }
+
+        [Test]
+        [TestCase("+")]
+        [TestCase("-")]
+        [TestCase("/")]
+        [TestCase("*")]
+        public void GivenAValidOperatorThenIsOperatorShouldReturnTrue(string op)
+        {
+            bool result = Operators.IsOperator(op);
+
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        [TestCase("")]
+        [TestCase(" ")]
+        [TestCase("(")]
+        [TestCase(")")]
+        public void GivenAValidOperatorThenIsOperatorShouldReturnFalse(string op)
+        {
+            bool result = Operators.IsOperator(op);
+
+            Assert.That(result, Is.False);
+        }
+
+        [Test]
+        [TestCase("+", 4)]
+        [TestCase("-", 3)]
+        [TestCase("*", 2)]
+        [TestCase("/", 1)]
+        public void GivenAValidOperatorThenReturnPrecedenceShouldReturnTheExpectedValue(string op, int expectedValue)
+        {
+            int result = Operators.GetPrecedence(op);
+
+            Assert.That(result, Is.EqualTo(expectedValue));
+        }
     }
 }

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace MathParser
 {
     //Inspired by the shunting yard algorithim, without the confusing RPN / postfix
     public class StackCalculator
     {
-        public string Parse(string value)
+        public int Parse(List<String> tokens)
         {
-            var tokens = value.Split(new[] { " " }, StringSplitOptions.None).ToList();
             var stack = new Stack<String>();
             int currentPrecedence = 0;
 
@@ -36,7 +34,7 @@ namespace MathParser
 
             RewindStack(stack);
 
-            return stack.Pop();
+            return int.Parse(stack.Pop());
         }
 
         private void RewindStack(Stack<String> stack)

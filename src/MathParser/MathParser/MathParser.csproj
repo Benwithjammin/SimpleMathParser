@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListCalculator.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="CalculatorFactory.cs" />
     <Compile Include="IStringTokeniser.cs" />
+    <Compile Include="TokenCalculator.cs" />
     <Compile Include="RuleMapper.cs" />
     <Compile Include="InputValidator.cs" />
     <Compile Include="Operators.cs" />

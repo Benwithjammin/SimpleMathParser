@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace MathParser.Tests.Unit
@@ -11,12 +12,15 @@ namespace MathParser.Tests.Unit
         [TestCase("32 + 2 / 2", 17)]
         [TestCase("500 + 10 - 66 * 32", 14208)]
         [TestCase("(5 + 10) * 7 ", 70)]
+        [TestCase("3 + ( 4 * 66 ) - 32", 70)]
         public void Test(string value, int expectedResult)
         {
             var calc = new StackCalculator();
-            string result = calc.Parse(value);
+            var tokens = value.Split(new[] {" "}, StringSplitOptions.None).ToList();
 
-            Assert.That(Int32.Parse(result), Is.EqualTo(expectedResult));
+            int result = calc.Parse(tokens);
+
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

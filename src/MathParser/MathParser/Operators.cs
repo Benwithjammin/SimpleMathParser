@@ -2,20 +2,23 @@
 {
     public class Operators
     {
+        public const string OPEN_PARENTHESES = "(";
+        public const string CLOSE_PARENTHESES = ")";
+
         //TODO - refactor with Dictionary, op as key, new type with Func and presendense in
 
-        public static int CalculateOperatation(int valueOne, int valueTwo, string op)
+        public static int CalculateOperatation(int leftValue, int rightValue, string op)
         {
             switch (op)
             {
                 case "+":
-                    return valueOne + valueTwo;
+                    return leftValue + rightValue;
                 case "-":
-                    return valueOne - valueTwo;
+                    return leftValue - rightValue;
                 case "*":
-                    return valueOne * valueTwo;
+                    return leftValue * rightValue;
                 case "/":
-                    return valueOne / valueTwo;
+                    return leftValue / rightValue;
                 default:
                     return 0;
             }
