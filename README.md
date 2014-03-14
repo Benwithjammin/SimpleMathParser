@@ -17,3 +17,12 @@ To get up and running:
   1. Clone this repo
   2. Enable nuget package restore in VS and build
   3. Run the MathParser .exe console application
+
+###Parser Rules
+The parser must be able to convert the following rules to operators
+
+Rules:
+
+a = '+', b = '-', c = '*', d = '/', e = '(', f = ')'
+
+The parser must respect left to right presendense, including inside of parentheses
