@@ -48,31 +48,23 @@ namespace MathParser
             return tokens;
         }
 
-        private static int CalculateTotalParathensisLength(int openingParenthesesIndex, int closingParenthesesIndex)
-        {
-            int length = closingParenthesesIndex - openingParenthesesIndex;
-            length -= 1;
-
-            return length;
-        }
-
         private List<string> Unwind(List<String> tokens, int startIndex, int endIndex)
         {
             int unwoundInnerTotal = GetUnwoundInnerTotal(tokens, startIndex, endIndex);
 
-            var internalTokens = new List<String>();
+            var unwoundTokens = new List<String>();
 
             for (int i = 0; i < tokens.Count; i++)
             {
-                if (OutsideParentheses(startIndex, endIndex, i))
+                if (IsOutsideParentheses(startIndex, endIndex, i))
                 {
-                    internalTokens.Add(tokens[i]);
+                    unwoundTokens.Add(tokens[i]);
                 }
             }
 
-            internalTokens.Insert(startIndex, unwoundInnerTotal.ToString()); //Replace opening bracket with inner total
+            unwoundTokens.Insert(startIndex, unwoundInnerTotal.ToString()); //Replace opening bracket with inner total
 
-            return internalTokens;
+            return unwoundTokens;
         }
 
         private int GetUnwoundInnerTotal(List<string> tokens, int openingParenthesesIndex, int closingParenthesesIndex)
@@ -83,7 +75,7 @@ namespace MathParser
             return unwoundInnerTotal;
         }
 
-        private static bool OutsideParentheses(int startIndex, int endIndex, int currentIndex)
+        private bool IsOutsideParentheses(int startIndex, int endIndex, int currentIndex)
         {
             return currentIndex < startIndex || currentIndex > endIndex;
         }
@@ -99,6 +91,14 @@ namespace MathParser
             }
 
             return unwoundParentheses;
+        }
+
+        private int CalculateTotalParathensisLength(int openingParenthesesIndex, int closingParenthesesIndex)
+        {
+            int length = closingParenthesesIndex - openingParenthesesIndex;
+            length -= 1;
+
+            return length;
         }
     }
 }
